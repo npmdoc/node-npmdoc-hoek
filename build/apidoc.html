@@ -1,0 +1,2077 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/hapijs/hoek#readme"
+
+    >hoek (v4.1.1)</a>
+</h1>
+<h4>General purpose node utilities</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hoek">module hoek</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">hoek.</span>abortThrow</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.Bench">
+            function <span class="apidocSignatureSpan">hoek.</span>Bench
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.Timer">
+            function <span class="apidocSignatureSpan">hoek.</span>Timer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.abort">
+            function <span class="apidocSignatureSpan">hoek.</span>abort
+            <span class="apidocSignatureSpan">(message, hideStack)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.applyToDefaults">
+            function <span class="apidocSignatureSpan">hoek.</span>applyToDefaults
+            <span class="apidocSignatureSpan">(defaults, options, isNullOverride)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.applyToDefaultsWithShallow">
+            function <span class="apidocSignatureSpan">hoek.</span>applyToDefaultsWithShallow
+            <span class="apidocSignatureSpan">(defaults, options, keys)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.assert">
+            function <span class="apidocSignatureSpan">hoek.</span>assert
+            <span class="apidocSignatureSpan">(condition)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.base64urlDecode">
+            function <span class="apidocSignatureSpan">hoek.</span>base64urlDecode
+            <span class="apidocSignatureSpan">(value, encoding)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.base64urlEncode">
+            function <span class="apidocSignatureSpan">hoek.</span>base64urlEncode
+            <span class="apidocSignatureSpan">(value, encoding)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.callStack">
+            function <span class="apidocSignatureSpan">hoek.</span>callStack
+            <span class="apidocSignatureSpan">(slice)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.clone">
+            function <span class="apidocSignatureSpan">hoek.</span>clone
+            <span class="apidocSignatureSpan">(obj, seen)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.cloneWithShallow">
+            function <span class="apidocSignatureSpan">hoek.</span>cloneWithShallow
+            <span class="apidocSignatureSpan">(source, keys)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.contain">
+            function <span class="apidocSignatureSpan">hoek.</span>contain
+            <span class="apidocSignatureSpan">(ref, values, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.deepEqual">
+            function <span class="apidocSignatureSpan">hoek.</span>deepEqual
+            <span class="apidocSignatureSpan">(obj, ref, options, seen)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.displayStack">
+            function <span class="apidocSignatureSpan">hoek.</span>displayStack
+            <span class="apidocSignatureSpan">(slice)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.escapeHeaderAttribute">
+            function <span class="apidocSignatureSpan">hoek.</span>escapeHeaderAttribute
+            <span class="apidocSignatureSpan">(attribute)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.escapeHtml">
+            function <span class="apidocSignatureSpan">hoek.</span>escapeHtml
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.escapeJavaScript">
+            function <span class="apidocSignatureSpan">hoek.</span>escapeJavaScript
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.escapeRegex">
+            function <span class="apidocSignatureSpan">hoek.</span>escapeRegex
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.flatten">
+            function <span class="apidocSignatureSpan">hoek.</span>flatten
+            <span class="apidocSignatureSpan">(array, target)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.format">
+            function <span class="apidocSignatureSpan">hoek.</span>format
+            <span class="apidocSignatureSpan">(f)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.formatStack">
+            function <span class="apidocSignatureSpan">hoek.</span>formatStack
+            <span class="apidocSignatureSpan">(stack)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.formatTrace">
+            function <span class="apidocSignatureSpan">hoek.</span>formatTrace
+            <span class="apidocSignatureSpan">(trace)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.ignore">
+            function <span class="apidocSignatureSpan">hoek.</span>ignore
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.inherits">
+            function <span class="apidocSignatureSpan">hoek.</span>inherits
+            <span class="apidocSignatureSpan">(ctor, superCtor)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.intersect">
+            function <span class="apidocSignatureSpan">hoek.</span>intersect
+            <span class="apidocSignatureSpan">(array1, array2, justFirst)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.isInteger">
+            function <span class="apidocSignatureSpan">hoek.</span>isInteger
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.mapToObject">
+            function <span class="apidocSignatureSpan">hoek.</span>mapToObject
+            <span class="apidocSignatureSpan">(array, key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.merge">
+            function <span class="apidocSignatureSpan">hoek.</span>merge
+            <span class="apidocSignatureSpan">(target, source, isNullOverride, isMergeArrays)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.nextTick">
+            function <span class="apidocSignatureSpan">hoek.</span>nextTick
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.once">
+            function <span class="apidocSignatureSpan">hoek.</span>once
+            <span class="apidocSignatureSpan">(method)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.reach">
+            function <span class="apidocSignatureSpan">hoek.</span>reach
+            <span class="apidocSignatureSpan">(obj, chain, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.reachTemplate">
+            function <span class="apidocSignatureSpan">hoek.</span>reachTemplate
+            <span class="apidocSignatureSpan">(obj, template, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.shallow">
+            function <span class="apidocSignatureSpan">hoek.</span>shallow
+            <span class="apidocSignatureSpan">(source)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.stringify">
+            function <span class="apidocSignatureSpan">hoek.</span>stringify
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.transform">
+            function <span class="apidocSignatureSpan">hoek.</span>transform
+            <span class="apidocSignatureSpan">(source, transform, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.unique">
+            function <span class="apidocSignatureSpan">hoek.</span>unique
+            <span class="apidocSignatureSpan">(array, key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.uniqueFilename">
+            function <span class="apidocSignatureSpan">hoek.</span>uniqueFilename
+            <span class="apidocSignatureSpan">(path, extension)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hoek.</span>Bench.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hoek.</span>Timer.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hoek.</span>escape</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hoek.Bench">module hoek.Bench</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.Bench.Bench">
+            function <span class="apidocSignatureSpan">hoek.</span>Bench
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.Bench.now">
+            function <span class="apidocSignatureSpan">hoek.Bench.</span>now
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hoek.Bench.prototype">module hoek.Bench.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.Bench.prototype.elapsed">
+            function <span class="apidocSignatureSpan">hoek.Bench.prototype.</span>elapsed
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.Bench.prototype.reset">
+            function <span class="apidocSignatureSpan">hoek.Bench.prototype.</span>reset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hoek.Timer">module hoek.Timer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.Timer.Timer">
+            function <span class="apidocSignatureSpan">hoek.</span>Timer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hoek.Timer.prototype">module hoek.Timer.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.Timer.prototype.elapsed">
+            function <span class="apidocSignatureSpan">hoek.Timer.prototype.</span>elapsed
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.Timer.prototype.reset">
+            function <span class="apidocSignatureSpan">hoek.Timer.prototype.</span>reset
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hoek.escape">module hoek.escape</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.escape.escapeHtml">
+            function <span class="apidocSignatureSpan">hoek.escape.</span>escapeHtml
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.escape.escapeJavaScript">
+            function <span class="apidocSignatureSpan">hoek.escape.</span>escapeJavaScript
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hoek" id="apidoc.module.hoek">module hoek</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.Bench" id="apidoc.element.hoek.Bench">
+        function <span class="apidocSignatureSpan">hoek.</span>Bench
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Bench = function () {
+
+    this.ts = 0;
+    this.reset();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.Timer" id="apidoc.element.hoek.Timer">
+        function <span class="apidocSignatureSpan">hoek.</span>Timer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Timer = function () {
+
+    this.ts = 0;
+    this.reset();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.abort" id="apidoc.element.hoek.abort">
+        function <span class="apidocSignatureSpan">hoek.</span>abort
+        <span class="apidocSignatureSpan">(message, hideStack)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">abort = function (message, hideStack) {
+
+    if (process.env.NODE_ENV === &#x27;test&#x27; || exports.abortThrow === true) {
+        throw new Error(message || &#x27;Unknown error&#x27;);
+    }
+
+    let stack = &#x27;&#x27;;
+    if (!hideStack) {
+        stack = exports.displayStack(1).join(&#x27;\n\t&#x27;);
+    }
+    console.log(&#x27;ABORT: &#x27; + message + &#x27;\n\t&#x27; + stack);
+    process.exit(1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.applyToDefaults" id="apidoc.element.hoek.applyToDefaults">
+        function <span class="apidocSignatureSpan">hoek.</span>applyToDefaults
+        <span class="apidocSignatureSpan">(defaults, options, isNullOverride)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">applyToDefaults = function (defaults, options, isNullOverride) {
+
+    exports.assert(defaults &#x26;&#x26; typeof defaults === &#x27;object&#x27;, &#x27;Invalid defaults value: must be an object&#x27;);
+    exports.assert(!options || options === true || typeof options === &#x27;object&#x27;, &#x27;Invalid options value: must be true, falsy or an
+ object&#x27;);
+
+    if (!options) {                                                 // If no options, return null
+        return null;
+    }
+
+    const copy = exports.clone(defaults);
+
+    if (options === true) {                                         // If options is set to true, use defaults
+        return copy;
+    }
+
+    return exports.merge(copy, options, isNullOverride === true, false);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+For example, to use Hoek to set configuration with default options:
+```javascript
+const Hoek = require(&#x27;hoek&#x27;);
+
+const default = {url : &#x22;www.github.com&#x22;, port : &#x22;8000&#x22;, debug : true};
+
+const config = Hoek.<span class="apidocCodeKeywordSpan">applyToDefaults</span>(default, {port : &#x22;3000&#x22;, admin : true});
+
+// In this case, config would be { url: &#x27;www.github.com&#x27;, port: &#x27;3000&#x27;, debug: true, admin: true }
+```
+
+## Documentation
+
+[**API Reference**](API.md)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.applyToDefaultsWithShallow" id="apidoc.element.hoek.applyToDefaultsWithShallow">
+        function <span class="apidocSignatureSpan">hoek.</span>applyToDefaultsWithShallow
+        <span class="apidocSignatureSpan">(defaults, options, keys)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">applyToDefaultsWithShallow = function (defaults, options, keys) {
+
+    exports.assert(defaults &#x26;&#x26; typeof defaults === &#x27;object&#x27;, &#x27;Invalid defaults value: must be an object&#x27;);
+    exports.assert(!options || options === true || typeof options === &#x27;object&#x27;, &#x27;Invalid options value: must be true, falsy or an
+ object&#x27;);
+    exports.assert(keys &#x26;&#x26; Array.isArray(keys), &#x27;Invalid keys&#x27;);
+
+    if (!options) {                                                 // If no options, return null
+        return null;
+    }
+
+    const copy = exports.cloneWithShallow(defaults, keys);
+
+    if (options === true) {                                         // If options is set to true, use defaults
+        return copy;
+    }
+
+    const storage = internals.store(options, keys);   // Move shallow copy items to storage
+    exports.merge(copy, options, false, false);     // Deep copy the rest
+    internals.restore(copy, options, storage);      // Shallow copy the stored items and restore
+    return copy;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.assert" id="apidoc.element.hoek.assert">
+        function <span class="apidocSignatureSpan">hoek.</span>assert
+        <span class="apidocSignatureSpan">(condition)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">assert = function (condition) {
+
+    if (condition) {
+        return;
+    }
+
+    if (arguments.length === 2 &#x26;&#x26; arguments[1] instanceof Error) {
+        throw arguments[1];
+    }
+
+    let msgs = [];
+    for (let i = 1; i &#x3c; arguments.length; ++i) {
+        if (arguments[i] !== &#x27;&#x27;) {
+            msgs.push(arguments[i]);            // Avoids Array.slice arguments leak, allowing for V8 optimizations
+        }
+    }
+
+    msgs = msgs.map((msg) =&#x3e; {
+
+        return typeof msg === &#x27;string&#x27; ? msg : msg instanceof Error ? msg.message : exports.stringify(msg);
+    });
+
+    throw new Error(msgs.join(&#x27; &#x27;) || &#x27;Unknown error&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.base64urlDecode" id="apidoc.element.hoek.base64urlDecode">
+        function <span class="apidocSignatureSpan">hoek.</span>base64urlDecode
+        <span class="apidocSignatureSpan">(value, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">base64urlDecode = function (value, encoding) {
+
+    if (typeof value !== &#x27;string&#x27;) {
+
+        return new Error(&#x27;Value not a string&#x27;);
+    }
+
+    if (!/^[\w\-]*$/.test(value)) {
+
+        return new Error(&#x27;Invalid character&#x27;);
+    }
+
+    const buf = new Buffer(value, &#x27;base64&#x27;);
+    return (encoding === &#x27;buffer&#x27; ? buf : buf.toString(encoding || &#x27;binary&#x27;));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.base64urlEncode" id="apidoc.element.hoek.base64urlEncode">
+        function <span class="apidocSignatureSpan">hoek.</span>base64urlEncode
+        <span class="apidocSignatureSpan">(value, encoding)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">base64urlEncode = function (value, encoding) {
+
+    exports.assert(typeof value === &#x27;string&#x27; || Buffer.isBuffer(value), &#x27;value must be string or buffer&#x27;);
+    const buf = (Buffer.isBuffer(value) ? value : new Buffer(value, encoding || &#x27;binary&#x27;));
+    return buf.toString(&#x27;base64&#x27;).replace(/\+/g, &#x27;-&#x27;).replace(/\//g, &#x27;_&#x27;).replace(/\=/g, &#x27;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.callStack" id="apidoc.element.hoek.callStack">
+        function <span class="apidocSignatureSpan">hoek.</span>callStack
+        <span class="apidocSignatureSpan">(slice)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">callStack = function (slice) {
+
+    // http://code.google.com/p/v8/wiki/JavaScriptStackTraceApi
+
+    const v8 = Error.prepareStackTrace;
+    Error.prepareStackTrace = function (_, stack) {
+
+        return stack;
+    };
+
+    const capture = {};
+    Error.captureStackTrace(capture, this);     // arguments.callee is not supported in strict mode so we use this and slice the
+ trace of this off the result
+    const stack = capture.stack;
+
+    Error.prepareStackTrace = v8;
+
+    const trace = exports.formatStack(stack);
+
+    return trace.slice(1 + slice);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.clone" id="apidoc.element.hoek.clone">
+        function <span class="apidocSignatureSpan">hoek.</span>clone
+        <span class="apidocSignatureSpan">(obj, seen)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clone = function (obj, seen) {
+
+    if (typeof obj !== &#x27;object&#x27; ||
+        obj === null) {
+
+        return obj;
+    }
+
+    seen = seen || new Map();
+
+    const lookup = seen.get(obj);
+    if (lookup) {
+        return lookup;
+    }
+
+    let newObj;
+    let cloneDeep = false;
+
+    if (!Array.isArray(obj)) {
+        if (Buffer.isBuffer(obj)) {
+            newObj = new Buffer(obj);
+        }
+        else if (obj instanceof Date) {
+            newObj = new Date(obj.getTime());
+        }
+        else if (obj instanceof RegExp) {
+            newObj = new RegExp(obj);
+        }
+        else {
+            const proto = Object.getPrototypeOf(obj);
+            if (proto &#x26;&#x26;
+                proto.isImmutable) {
+
+                newObj = obj;
+            }
+            else {
+                newObj = Object.create(proto);
+                cloneDeep = true;
+            }
+        }
+    }
+    else {
+        newObj = [];
+        cloneDeep = true;
+    }
+
+    seen.set(obj, newObj);
+
+    if (cloneDeep) {
+        const keys = Object.getOwnPropertyNames(obj);
+        for (let i = 0; i &#x3c; keys.length; ++i) {
+            const key = keys[i];
+            const descriptor = Object.getOwnPropertyDescriptor(obj, key);
+            if (descriptor &#x26;&#x26;
+                (descriptor.get ||
+                 descriptor.set)) {
+
+                Object.defineProperty(newObj, key, descriptor);
+            }
+            else {
+                newObj[key] = exports.clone(obj[key], seen);
+            }
+        }
+    }
+
+    return newObj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.cloneWithShallow" id="apidoc.element.hoek.cloneWithShallow">
+        function <span class="apidocSignatureSpan">hoek.</span>cloneWithShallow
+        <span class="apidocSignatureSpan">(source, keys)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cloneWithShallow = function (source, keys) {
+
+    if (!source ||
+        typeof source !== &#x27;object&#x27;) {
+
+        return source;
+    }
+
+    const storage = internals.store(source, keys);    // Move shallow copy items to storage
+    const copy = exports.clone(source);               // Deep copy the rest
+    internals.restore(copy, source, storage);       // Shallow copy the stored items and restore
+    return copy;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.contain" id="apidoc.element.hoek.contain">
+        function <span class="apidocSignatureSpan">hoek.</span>contain
+        <span class="apidocSignatureSpan">(ref, values, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">contain = function (ref, values, options) {
+
+<span class="apidocCodeCommentSpan">    /*
+        string -&#x3e; string(s)
+        array -&#x3e; item(s)
+        object -&#x3e; key(s)
+        object -&#x3e; object (key:value)
+    */
+</span>
+    let valuePairs = null;
+    if (typeof ref === &#x27;object&#x27; &#x26;&#x26;
+        typeof values === &#x27;object&#x27; &#x26;&#x26;
+        !Array.isArray(ref) &#x26;&#x26;
+        !Array.isArray(values)) {
+
+        valuePairs = values;
+        values = Object.keys(values);
+    }
+    else {
+        values = [].concat(values);
+    }
+
+    options = options || {};            // deep, once, only, part
+
+    exports.assert(arguments.length &#x3e;= 2, &#x27;Insufficient arguments&#x27;);
+    exports.assert(typeof ref === &#x27;string&#x27; || typeof ref === &#x27;object&#x27;, &#x27;Reference must be string or an object&#x27;);
+    exports.assert(values.length, &#x27;Values array cannot be empty&#x27;);
+
+    let compare;
+    let compareFlags;
+    if (options.deep) {
+        compare = exports.deepEqual;
+
+        const hasOnly = options.hasOwnProperty(&#x27;only&#x27;);
+        const hasPart = options.hasOwnProperty(&#x27;part&#x27;);
+
+        compareFlags = {
+            prototype: hasOnly ? options.only : hasPart ? !options.part : false,
+            part: hasOnly ? !options.only : hasPart ? options.part : true
+        };
+    }
+    else {
+        compare = (a, b) =&#x3e; a === b;
+    }
+
+    let misses = false;
+    const matches = new Array(values.length);
+    for (let i = 0; i &#x3c; matches.length; ++i) {
+        matches[i] = 0;
+    }
+
+    if (typeof ref === &#x27;string&#x27;) {
+        let pattern = &#x27;(&#x27;;
+        for (let i = 0; i &#x3c; values.length; ++i) {
+            const value = values[i];
+            exports.assert(typeof value === &#x27;string&#x27;, &#x27;Cannot compare string reference to non-string value&#x27;);
+            pattern += (i ? &#x27;|&#x27; : &#x27;&#x27;) + exports.escapeRegex(value);
+        }
+
+        const regex = new RegExp(pattern + &#x27;)&#x27;, &#x27;g&#x27;);
+        const leftovers = ref.replace(regex, ($0, $1) =&#x3e; {
+
+            const index = values.indexOf($1);
+            ++matches[index];
+            return &#x27;&#x27;;          // Remove from string
+        });
+
+        misses = !!leftovers;
+    }
+    else if (Array.isArray(ref)) {
+        for (let i = 0; i &#x3c; ref.length; ++i) {
+            let matched = false;
+            for (let j = 0; j &#x3c; values.length &#x26;&#x26; matched === false; ++j) {
+                matched = compare(values[j], ref[i], compareFlags) &#x26;&#x26; j;
+            }
+
+            if (matched !== false) {
+                ++matches[matched];
+            }
+            else {
+                misses = true;
+            }
+        }
+    }
+    else {
+        const keys = Object.getOwnPropertyNames(ref);
+        for (let i = 0; i &#x3c; keys.length; ++i) {
+            const key = keys[i];
+            const pos = values.indexOf(key);
+            if (pos !== -1) {
+                if (valuePairs &#x26;&#x26;
+                    !compare(valuePairs[key], ref[key], compareFlags)) {
+
+                    return false;
+                }
+
+                ++matches[pos];
+            }
+            else {
+                misses = true;
+            }
+        }
+    }
+
+    let result = false;
+    for (let i = 0; i &#x3c; matches.length; ++i) {
+        result = result || !!matches[i];
+        if ((options.once &#x26;&#x26; matches[i] &#x3e; 1) ||
+            (!options.part &#x26;&#x26; !matches[i])) {
+
+            return false;
+        }
+    }
+
+    if (options.only &#x26;&#x26;
+        misses) {
+
+        return false;
+    }
+
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.deepEqual" id="apidoc.element.hoek.deepEqual">
+        function <span class="apidocSignatureSpan">hoek.</span>deepEqual
+        <span class="apidocSignatureSpan">(obj, ref, options, seen)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deepEqual = function (obj, ref, options, seen) {
+
+    options = options || { prototype: true };
+
+    const type = typeof obj;
+
+    if (type !== typeof ref) {
+        return false;
+    }
+
+    if (type !== &#x27;object&#x27; ||
+        obj === null ||
+        ref === null) {
+
+        if (obj === ref) {                                                      // Copied from Deep-eql, copyright(c) 2013 Jake
+Luer, jake@alogicalparadox.com, MIT Licensed, https://github.com/chaijs/deep-eql
+            return obj !== 0 || 1 / obj === 1 / ref;        // -0 / +0
+        }
+
+        return obj !== obj &#x26;&#x26; ref !== ref;                  // NaN
+    }
+
+    seen = seen || [];
+    if (seen.indexOf(obj) !== -1) {
+        return true;                            // If previous comparison failed, it would have stopped execution
+    }
+
+    seen.push(obj);
+
+    if (Array.isArray(obj)) {
+        if (!Array.isArray(ref)) {
+            return false;
+        }
+
+        if (!options.part &#x26;&#x26; obj.length !== ref.length) {
+            return false;
+        }
+
+        for (let i = 0; i &#x3c; obj.length; ++i) {
+            if (options.part) {
+                let found = false;
+                for (let j = 0; j &#x3c; ref.length; ++j) {
+                    if (exports.deepEqual(obj[i], ref[j], options)) {
+                        found = true;
+                        break;
+                    }
+                }
+
+                return found;
+            }
+
+            if (!exports.deepEqual(obj[i], ref[i], options)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    if (Buffer.isBuffer(obj)) {
+        if (!Buffer.isBuffer(ref)) {
+            return false;
+        }
+
+        if (obj.length !== ref.length) {
+            return false;
+        }
+
+        for (let i = 0; i &#x3c; obj.length; ++i) {
+            if (obj[i] !== ref[i]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    if (obj instanceof Date) {
+        return (ref instanceof Date &#x26;&#x26; obj.getTime() === ref.getTime());
+    }
+
+    if (obj instanceof RegExp) {
+        return (ref instanceof RegExp &#x26;&#x26; obj.toString() === ref.toString());
+    }
+
+    if (options.prototype) {
+        if (Object.getPrototypeOf(obj) !== Object.getPrototypeOf(ref)) {
+            return false;
+        }
+    }
+
+    const keys = Object.getOwnPropertyNames(obj);
+
+    if (!options.part &#x26;&#x26; keys.length !== Object.getOwnPropertyNames(ref).length) {
+        return false;
+    }
+
+    for (let i = 0; i &#x3c; keys.length; ++i) {
+        const key = keys[i];
+        const descriptor = Object.getOwnPropertyDescriptor(obj, key);
+        if (descriptor.get) {
+            if (!exports.deepEqual(descriptor, Object.getOwnPropertyDescriptor(ref, key), options, seen)) {
+                return false;
+            }
+        }
+        else if (!exports.deepEqual(obj[key], ref[key], options, seen)) {
+            return false;
+        }
+    }
+
+    return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.displayStack" id="apidoc.element.hoek.displayStack">
+        function <span class="apidocSignatureSpan">hoek.</span>displayStack
+        <span class="apidocSignatureSpan">(slice)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">displayStack = function (slice) {
+
+    const trace = exports.callStack(slice === undefined ? 1 : slice + 1);
+
+    return exports.formatTrace(trace);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.escapeHeaderAttribute" id="apidoc.element.hoek.escapeHeaderAttribute">
+        function <span class="apidocSignatureSpan">hoek.</span>escapeHeaderAttribute
+        <span class="apidocSignatureSpan">(attribute)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">escapeHeaderAttribute = function (attribute) {
+
+    // Allowed value characters: !#$%&#x26;&#x27;()*+,-./:;&#x3c;=&#x3e;?@[]^_`{|}~ and space, a-z, A-Z, 0-9, \, &#x22;
+
+    exports.assert(/^[ \w\!#\$%&#x26;&#x27;\(\)\*\+,\-\.\/\:;&#x3c;\=&#x3e;\?@\[\]\^`\{\|\}~\&#x22;\\]*$/.test(attribute), &#x27;Bad attribute value (&#x27; + attribute
+ + &#x27;)&#x27;);
+
+    return attribute.replace(/\\/g, &#x27;\\\\&#x27;).replace(/\&#x22;/g, &#x27;\\&#x22;&#x27;);                             // Escape quotes and slash
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.escapeHtml" id="apidoc.element.hoek.escapeHtml">
+        function <span class="apidocSignatureSpan">hoek.</span>escapeHtml
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">escapeHtml = function (string) {
+
+    return Escape.escapeHtml(string);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.escapeJavaScript" id="apidoc.element.hoek.escapeJavaScript">
+        function <span class="apidocSignatureSpan">hoek.</span>escapeJavaScript
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">escapeJavaScript = function (string) {
+
+    return Escape.escapeJavaScript(string);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.escapeRegex" id="apidoc.element.hoek.escapeRegex">
+        function <span class="apidocSignatureSpan">hoek.</span>escapeRegex
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">escapeRegex = function (string) {
+
+    // Escape ^$.*+-?=!:|\/()[]{},
+    return string.replace(/[\^\$\.\*\+\-\?\=\!\:\|\\\/\(\)\[\]\{\}\,]/g, &#x27;\\$&#x26;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.flatten" id="apidoc.element.hoek.flatten">
+        function <span class="apidocSignatureSpan">hoek.</span>flatten
+        <span class="apidocSignatureSpan">(array, target)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">flatten = function (array, target) {
+
+    const result = target || [];
+
+    for (let i = 0; i &#x3c; array.length; ++i) {
+        if (Array.isArray(array[i])) {
+            exports.flatten(array[i], result);
+        }
+        else {
+            result.push(array[i]);
+        }
+    }
+
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.format" id="apidoc.element.hoek.format">
+        function <span class="apidocSignatureSpan">hoek.</span>format
+        <span class="apidocSignatureSpan">(f)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">format = function (f) {
+  if (typeof f !== &#x27;string&#x27;) {
+    const objects = new Array(arguments.length);
+    for (var index = 0; index &#x3c; arguments.length; index++) {
+      objects[index] = inspect(arguments[index]);
+    }
+    return objects.join(&#x27; &#x27;);
+  }
+
+  var argLen = arguments.length;
+
+  if (argLen === 1) return f;
+
+  var str = &#x27;&#x27;;
+  var a = 1;
+  var lastPos = 0;
+  for (var i = 0; i &#x3c; f.length;) {
+    if (f.charCodeAt(i) === 37/*&#x27;%&#x27;*/ &#x26;&#x26; i + 1 &#x3c; f.length) {
+      switch (f.charCodeAt(i + 1)) {
+        case 100: // &#x27;d&#x27;
+          if (a &#x3e;= argLen)
+            break;
+          if (lastPos &#x3c; i)
+            str += f.slice(lastPos, i);
+          str += Number(arguments[a++]);
+          lastPos = i = i + 2;
+          continue;
+        case 106: // &#x27;j&#x27;
+          if (a &#x3e;= argLen)
+            break;
+          if (lastPos &#x3c; i)
+            str += f.slice(lastPos, i);
+          str += tryStringify(arguments[a++]);
+          lastPos = i = i + 2;
+          continue;
+        case 115: // &#x27;s&#x27;
+          if (a &#x3e;= argLen)
+            break;
+          if (lastPos &#x3c; i)
+            str += f.slice(lastPos, i);
+          str += String(arguments[a++]);
+          lastPos = i = i + 2;
+          continue;
+        case 37: // &#x27;%&#x27;
+          if (lastPos &#x3c; i)
+            str += f.slice(lastPos, i);
+          str += &#x27;%&#x27;;
+          lastPos = i = i + 2;
+          continue;
+      }
+    }
+    ++i;
+  }
+  if (lastPos === 0)
+    str = f;
+  else if (lastPos &#x3c; f.length)
+    str += f.slice(lastPos);
+  while (a &#x3c; argLen) {
+    const x = arguments[a++];
+    if (x === null || (typeof x !== &#x27;object&#x27; &#x26;&#x26; typeof x !== &#x27;symbol&#x27;)) {
+      str += &#x27; &#x27; + x;
+    } else {
+      str += &#x27; &#x27; + inspect(x);
+    }
+  }
+  return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.formatStack" id="apidoc.element.hoek.formatStack">
+        function <span class="apidocSignatureSpan">hoek.</span>formatStack
+        <span class="apidocSignatureSpan">(stack)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">formatStack = function (stack) {
+
+    const trace = [];
+    for (let i = 0; i &#x3c; stack.length; ++i) {
+        const item = stack[i];
+        trace.push([item.getFileName(), item.getLineNumber(), item.getColumnNumber(), item.getFunctionName(), item.isConstructor
+()]);
+    }
+
+    return trace;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.formatTrace" id="apidoc.element.hoek.formatTrace">
+        function <span class="apidocSignatureSpan">hoek.</span>formatTrace
+        <span class="apidocSignatureSpan">(trace)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">formatTrace = function (trace) {
+
+    const display = [];
+
+    for (let i = 0; i &#x3c; trace.length; ++i) {
+        const row = trace[i];
+        display.push((row[4] ? &#x27;new &#x27; : &#x27;&#x27;) + row[3] + &#x27; (&#x27; + row[0] + &#x27;:&#x27; + row[1] + &#x27;:&#x27; + row[2] + &#x27;)&#x27;);
+    }
+
+    return display;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.ignore" id="apidoc.element.hoek.ignore">
+        function <span class="apidocSignatureSpan">hoek.</span>ignore
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ignore = function () { }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.inherits" id="apidoc.element.hoek.inherits">
+        function <span class="apidocSignatureSpan">hoek.</span>inherits
+        <span class="apidocSignatureSpan">(ctor, superCtor)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inherits = function (ctor, superCtor) {
+
+  if (ctor === undefined || ctor === null)
+    throw new TypeError(&#x27;The constructor to &#x22;inherits&#x22; must not be &#x27; +
+                        &#x27;null or undefined&#x27;);
+
+  if (superCtor === undefined || superCtor === null)
+    throw new TypeError(&#x27;The super constructor to &#x22;inherits&#x22; must not &#x27; +
+                        &#x27;be null or undefined&#x27;);
+
+  if (superCtor.prototype === undefined)
+    throw new TypeError(&#x27;The super constructor to &#x22;inherits&#x22; must &#x27; +
+                        &#x27;have a prototype&#x27;);
+
+  ctor.super_ = superCtor;
+  Object.setPrototypeOf(ctor.prototype, superCtor.prototype);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.intersect" id="apidoc.element.hoek.intersect">
+        function <span class="apidocSignatureSpan">hoek.</span>intersect
+        <span class="apidocSignatureSpan">(array1, array2, justFirst)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">intersect = function (array1, array2, justFirst) {
+
+    if (!array1 || !array2) {
+        return [];
+    }
+
+    const common = [];
+    const hash = (Array.isArray(array1) ? exports.mapToObject(array1) : array1);
+    const found = {};
+    for (let i = 0; i &#x3c; array2.length; ++i) {
+        if (hash[array2[i]] &#x26;&#x26; !found[array2[i]]) {
+            if (justFirst) {
+                return array2[i];
+            }
+
+            common.push(array2[i]);
+            found[array2[i]] = true;
+        }
+    }
+
+    return (justFirst ? null : common);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.isInteger" id="apidoc.element.hoek.isInteger">
+        function <span class="apidocSignatureSpan">hoek.</span>isInteger
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isSafeInteger() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.mapToObject" id="apidoc.element.hoek.mapToObject">
+        function <span class="apidocSignatureSpan">hoek.</span>mapToObject
+        <span class="apidocSignatureSpan">(array, key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mapToObject = function (array, key) {
+
+    if (!array) {
+        return null;
+    }
+
+    const obj = {};
+    for (let i = 0; i &#x3c; array.length; ++i) {
+        if (key) {
+            if (array[i][key]) {
+                obj[array[i][key]] = true;
+            }
+        }
+        else {
+            obj[array[i]] = true;
+        }
+    }
+
+    return obj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.merge" id="apidoc.element.hoek.merge">
+        function <span class="apidocSignatureSpan">hoek.</span>merge
+        <span class="apidocSignatureSpan">(target, source, isNullOverride, isMergeArrays)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">merge = function (target, source, isNullOverride, isMergeArrays) {
+<span class="apidocCodeCommentSpan">/*eslint-enable */
+</span>
+    exports.assert(target &#x26;&#x26; typeof target === &#x27;object&#x27;, &#x27;Invalid target value: must be an object&#x27;);
+    exports.assert(source === null || source === undefined || typeof source === &#x27;object&#x27;, &#x27;Invalid source value: must be null, undefined
+, or an object&#x27;);
+
+    if (!source) {
+        return target;
+    }
+
+    if (Array.isArray(source)) {
+        exports.assert(Array.isArray(target), &#x27;Cannot merge array onto an object&#x27;);
+        if (isMergeArrays === false) {                                                  // isMergeArrays defaults to true
+            target.length = 0;                                                          // Must not change target assignment
+        }
+
+        for (let i = 0; i &#x3c; source.length; ++i) {
+            target.push(exports.clone(source[i]));
+        }
+
+        return target;
+    }
+
+    const keys = Object.keys(source);
+    for (let i = 0; i &#x3c; keys.length; ++i) {
+        const key = keys[i];
+        const value = source[key];
+        if (value &#x26;&#x26;
+            typeof value === &#x27;object&#x27;) {
+
+            if (!target[key] ||
+                typeof target[key] !== &#x27;object&#x27; ||
+                (Array.isArray(target[key]) !== Array.isArray(value)) ||
+                value instanceof Date ||
+                Buffer.isBuffer(value) ||
+                value instanceof RegExp) {
+
+                target[key] = exports.clone(value);
+            }
+            else {
+                exports.merge(target[key], value, isNullOverride, isMergeArrays);
+            }
+        }
+        else {
+            if (value !== null &#x26;&#x26;
+                value !== undefined) {                              // Explicit to preserve empty strings
+
+                target[key] = value;
+            }
+            else if (isNullOverride !== false) {                    // Defaults to true
+                target[key] = value;
+            }
+        }
+    }
+
+    return target;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.nextTick" id="apidoc.element.hoek.nextTick">
+        function <span class="apidocSignatureSpan">hoek.</span>nextTick
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">nextTick = function (callback) {
+
+    return function () {
+
+        const args = arguments;
+        process.nextTick(() =&#x3e; {
+
+            callback.apply(null, args);
+        });
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.once" id="apidoc.element.hoek.once">
+        function <span class="apidocSignatureSpan">hoek.</span>once
+        <span class="apidocSignatureSpan">(method)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">once = function (method) {
+
+    if (method._hoekOnce) {
+        return method;
+    }
+
+    let once = false;
+    const wrapped = function () {
+
+        if (!once) {
+            once = true;
+            method.apply(null, arguments);
+        }
+    };
+
+    wrapped._hoekOnce = true;
+
+    return wrapped;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.reach" id="apidoc.element.hoek.reach">
+        function <span class="apidocSignatureSpan">hoek.</span>reach
+        <span class="apidocSignatureSpan">(obj, chain, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reach = function (obj, chain, options) {
+
+    if (chain === false ||
+        chain === null ||
+        typeof chain === &#x27;undefined&#x27;) {
+
+        return obj;
+    }
+
+    options = options || {};
+    if (typeof options === &#x27;string&#x27;) {
+        options = { separator: options };
+    }
+
+    const path = chain.split(options.separator || &#x27;.&#x27;);
+    let ref = obj;
+    for (let i = 0; i &#x3c; path.length; ++i) {
+        let key = path[i];
+        if (key[0] === &#x27;-&#x27; &#x26;&#x26; Array.isArray(ref)) {
+            key = key.slice(1, key.length);
+            key = ref.length - key;
+        }
+
+        if (!ref ||
+            !((typeof ref === &#x27;object&#x27; || typeof ref === &#x27;function&#x27;) &#x26;&#x26; key in ref) ||
+            (typeof ref !== &#x27;object&#x27; &#x26;&#x26; options.functions === false)) {         // Only object and function can have properties
+
+            exports.assert(!options.strict || i + 1 === path.length, &#x27;Missing segment&#x27;, key, &#x27;in reach path &#x27;, chain);
+            exports.assert(typeof ref === &#x27;object&#x27; || options.functions === true || typeof ref !== &#x27;function&#x27;, &#x27;Invalid segment&#x27;,
+key, &#x27;in reach path &#x27;, chain);
+            ref = options.default;
+            break;
+        }
+
+        ref = ref[key];
+    }
+
+    return ref;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.reachTemplate" id="apidoc.element.hoek.reachTemplate">
+        function <span class="apidocSignatureSpan">hoek.</span>reachTemplate
+        <span class="apidocSignatureSpan">(obj, template, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reachTemplate = function (obj, template, options) {
+
+    return template.replace(/{([^}]+)}/g, ($0, chain) =&#x3e; {
+
+        const value = exports.reach(obj, chain, options);
+        return (value === undefined || value === null ? &#x27;&#x27; : value);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.shallow" id="apidoc.element.hoek.shallow">
+        function <span class="apidocSignatureSpan">hoek.</span>shallow
+        <span class="apidocSignatureSpan">(source)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">shallow = function (source) {
+
+    const target = {};
+    const keys = Object.keys(source);
+    for (let i = 0; i &#x3c; keys.length; ++i) {
+        const key = keys[i];
+        target[key] = source[key];
+    }
+
+    return target;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.stringify" id="apidoc.element.hoek.stringify">
+        function <span class="apidocSignatureSpan">hoek.</span>stringify
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stringify = function () {
+
+    try {
+        return JSON.stringify.apply(null, arguments);
+    }
+    catch (err) {
+        return &#x27;[Cannot display object: &#x27; + err.message + &#x27;]&#x27;;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.transform" id="apidoc.element.hoek.transform">
+        function <span class="apidocSignatureSpan">hoek.</span>transform
+        <span class="apidocSignatureSpan">(source, transform, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">transform = function (source, transform, options) {
+
+    exports.assert(source === null || source === undefined || typeof source === &#x27;object&#x27; || Array.isArray(source), &#x27;Invalid source
+ object: must be null, undefined, an object, or an array&#x27;);
+    const separator = (typeof options === &#x27;object&#x27; &#x26;&#x26; options !== null) ? (options.separator || &#x27;.&#x27;) : &#x27;.&#x27;;
+
+    if (Array.isArray(source)) {
+        const results = [];
+        for (let i = 0; i &#x3c; source.length; ++i) {
+            results.push(exports.transform(source[i], transform, options));
+        }
+        return results;
+    }
+
+    const result = {};
+    const keys = Object.keys(transform);
+
+    for (let i = 0; i &#x3c; keys.length; ++i) {
+        const key = keys[i];
+        const path = key.split(separator);
+        const sourcePath = transform[key];
+
+        exports.assert(typeof sourcePath === &#x27;string&#x27;, &#x27;All mappings must be &#x22;.&#x22; delineated strings&#x27;);
+
+        let segment;
+        let res = result;
+
+        while (path.length &#x3e; 1) {
+            segment = path.shift();
+            if (!res[segment]) {
+                res[segment] = {};
+            }
+            res = res[segment];
+        }
+        segment = path.shift();
+        res[segment] = exports.reach(source, sourcePath, options);
+    }
+
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.unique" id="apidoc.element.hoek.unique">
+        function <span class="apidocSignatureSpan">hoek.</span>unique
+        <span class="apidocSignatureSpan">(array, key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(array, key) =&#x3e; {
+
+    let result;
+    if (key) {
+        result = [];
+        const index = new Set();
+        array.forEach((item) =&#x3e; {
+
+            const identifier = item[key];
+            if (!index.has(identifier)) {
+                index.add(identifier);
+                result.push(item);
+            }
+        });
+    }
+    else {
+        result = Array.from(new Set(array));
+    }
+
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.uniqueFilename" id="apidoc.element.hoek.uniqueFilename">
+        function <span class="apidocSignatureSpan">hoek.</span>uniqueFilename
+        <span class="apidocSignatureSpan">(path, extension)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uniqueFilename = function (path, extension) {
+
+    if (extension) {
+        extension = extension[0] !== &#x27;.&#x27; ? &#x27;.&#x27; + extension : extension;
+    }
+    else {
+        extension = &#x27;&#x27;;
+    }
+
+    path = Path.resolve(path);
+    const name = [Date.now(), process.pid, Crypto.randomBytes(8).toString(&#x27;hex&#x27;)].join(&#x27;-&#x27;) + extension;
+    return Path.join(path, name);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hoek.Bench" id="apidoc.module.hoek.Bench">module hoek.Bench</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.Bench.Bench" id="apidoc.element.hoek.Bench.Bench">
+        function <span class="apidocSignatureSpan">hoek.</span>Bench
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Bench = function () {
+
+    this.ts = 0;
+    this.reset();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.Bench.now" id="apidoc.element.hoek.Bench.now">
+        function <span class="apidocSignatureSpan">hoek.Bench.</span>now
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">now = function () {
+
+    const ts = process.hrtime();
+    return (ts[0] * 1e3) + (ts[1] / 1e6);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hoek.Bench.prototype" id="apidoc.module.hoek.Bench.prototype">module hoek.Bench.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.Bench.prototype.elapsed" id="apidoc.element.hoek.Bench.prototype.elapsed">
+        function <span class="apidocSignatureSpan">hoek.Bench.prototype.</span>elapsed
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">elapsed = function () {
+
+    return exports.Bench.now() - this.ts;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.Bench.prototype.reset" id="apidoc.element.hoek.Bench.prototype.reset">
+        function <span class="apidocSignatureSpan">hoek.Bench.prototype.</span>reset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reset = function () {
+
+    this.ts = exports.Bench.now();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hoek.Timer" id="apidoc.module.hoek.Timer">module hoek.Timer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.Timer.Timer" id="apidoc.element.hoek.Timer.Timer">
+        function <span class="apidocSignatureSpan">hoek.</span>Timer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Timer = function () {
+
+    this.ts = 0;
+    this.reset();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hoek.Timer.prototype" id="apidoc.module.hoek.Timer.prototype">module hoek.Timer.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.Timer.prototype.elapsed" id="apidoc.element.hoek.Timer.prototype.elapsed">
+        function <span class="apidocSignatureSpan">hoek.Timer.prototype.</span>elapsed
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">elapsed = function () {
+
+    return Date.now() - this.ts;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.Timer.prototype.reset" id="apidoc.element.hoek.Timer.prototype.reset">
+        function <span class="apidocSignatureSpan">hoek.Timer.prototype.</span>reset
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reset = function () {
+
+    this.ts = Date.now();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hoek.escape" id="apidoc.module.hoek.escape">module hoek.escape</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.escape.escapeHtml" id="apidoc.element.hoek.escape.escapeHtml">
+        function <span class="apidocSignatureSpan">hoek.escape.</span>escapeHtml
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">escapeHtml = function (input) {
+
+    if (!input) {
+        return &#x27;&#x27;;
+    }
+
+    let escaped = &#x27;&#x27;;
+
+    for (let i = 0; i &#x3c; input.length; ++i) {
+
+        const charCode = input.charCodeAt(i);
+
+        if (internals.isSafe(charCode)) {
+            escaped += input[i];
+        }
+        else {
+            escaped += internals.escapeHtmlChar(charCode);
+        }
+    }
+
+    return escaped;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.escape.escapeJavaScript" id="apidoc.element.hoek.escape.escapeJavaScript">
+        function <span class="apidocSignatureSpan">hoek.escape.</span>escapeJavaScript
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">escapeJavaScript = function (input) {
+
+    if (!input) {
+        return &#x27;&#x27;;
+    }
+
+    let escaped = &#x27;&#x27;;
+
+    for (let i = 0; i &#x3c; input.length; ++i) {
+
+        const charCode = input.charCodeAt(i);
+
+        if (internals.isSafe(charCode)) {
+            escaped += input[i];
+        }
+        else {
+            escaped += internals.escapeJavaScriptChar(charCode);
+        }
+    }
+
+    return escaped;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
