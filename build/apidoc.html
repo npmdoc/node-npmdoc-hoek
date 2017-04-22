@@ -412,6 +412,12 @@
 
         </li>
 
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hoek.</span>escape</span>
+
+        </li>
+
     </ol></li>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.hoek.Bench">module hoek.Bench</a><ol>
@@ -487,6 +493,28 @@
             <a class="apidocElementLiA" href="#apidoc.element.hoek.Timer.prototype.reset">
             function <span class="apidocSignatureSpan">hoek.Timer.prototype.</span>reset
             <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hoek.escape">module hoek.escape</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.escape.escapeHtml">
+            function <span class="apidocSignatureSpan">hoek.escape.</span>escapeHtml
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hoek.escape.escapeJavaScript">
+            function <span class="apidocSignatureSpan">hoek.escape.</span>escapeJavaScript
+            <span class="apidocSignatureSpan">(input)</span>
             </a>
 
         </li>
@@ -1829,6 +1857,8 @@ key, &#x27;in reach path &#x27;, chain);
 
 
 
+
+
 </div>
 
 <div class="apidocSectionDiv">
@@ -1959,6 +1989,79 @@ key, &#x27;in reach path &#x27;, chain);
     <li>description and source-code<pre class="apidocCodePre">reset = function () {
 
     this.ts = Date.now();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hoek.escape" id="apidoc.module.hoek.escape">module hoek.escape</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.escape.escapeHtml" id="apidoc.element.hoek.escape.escapeHtml">
+        function <span class="apidocSignatureSpan">hoek.escape.</span>escapeHtml
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">escapeHtml = function (input) {
+
+    if (!input) {
+        return &#x27;&#x27;;
+    }
+
+    let escaped = &#x27;&#x27;;
+
+    for (let i = 0; i &#x3c; input.length; ++i) {
+
+        const charCode = input.charCodeAt(i);
+
+        if (internals.isSafe(charCode)) {
+            escaped += input[i];
+        }
+        else {
+            escaped += internals.escapeHtmlChar(charCode);
+        }
+    }
+
+    return escaped;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hoek.escape.escapeJavaScript" id="apidoc.element.hoek.escape.escapeJavaScript">
+        function <span class="apidocSignatureSpan">hoek.escape.</span>escapeJavaScript
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">escapeJavaScript = function (input) {
+
+    if (!input) {
+        return &#x27;&#x27;;
+    }
+
+    let escaped = &#x27;&#x27;;
+
+    for (let i = 0; i &#x3c; input.length; ++i) {
+
+        const charCode = input.charCodeAt(i);
+
+        if (internals.isSafe(charCode)) {
+            escaped += input[i];
+        }
+        else {
+            escaped += internals.escapeJavaScriptChar(charCode);
+        }
+    }
+
+    return escaped;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
